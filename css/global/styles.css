@@ -1,32 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-.EN, .CY {
-  display: none;
-}
-
-.EN.show,
-.CY.show {
-  display: block;
-}
-
-
-/* -- GLOBAL STYLE SHEET --  */
+/* ---- GLOBAL STYLE SHEET ----  */
 
 
 /* -- TABLE OF CONTENT -- */
 
 /* - ROOT VARIABLES */
-/* - LAYOUTS & CONTAINERS */
-/*    - Grid Container */
-/*    - Two-Column Container */
-/*    - Three-Column Container */
+/* - DEFAULT STYLES   */
 /* - DEFAULT LOGO STYLES */
 /* - DEFAULT CARD STYLES  */
-/* - DEFAULT FONTS STYLES */
-/* - UTILS STYLES */
-/*    - Hover Styles */
-/*    - Separator */
-/*    - 'Test' Banner */
+/* - BUTTON STYLES */
+/* - HOVER STYLES */
+/* - SEPARATOR */
+/* - TEST BANNER  */
+
+/* COMPONETS---  */
+
+/* - SPORT WALES HEADER STYLE */
+/* - SPORT WALES FOOTER STYLE */
+/* - HEADER & FOOTER MEDIAQ */
+/* - SOCIAL lOGIN STYLES */
+/* - SOCIAL LOGIN MEDIAQ */
+/* - LANGUAGE PICKER   */
 
 /* ----- Media Queries ----- */
 /* ## TABLET STYLES */
@@ -36,8 +31,10 @@
 
 
 
-/* ROOT VARIABLES */
 
+
+
+/* ROOT VARIABLES */
 :root {
   --mobile-max: 768px;
   --tablet-max: 1024px;
@@ -55,7 +52,7 @@
   --btn-padding: 10px 20px;
 }
 
-
+/* DEFAULT STYLES   */
 *,
 *::before,
 *::after {
@@ -82,7 +79,7 @@ button {
   background: none;
   padding: 0;
   margin: 0;
-  /* Add any additional styles you want to reset here */
+  
 }
 
 body {
@@ -96,28 +93,6 @@ a:visited {
   color: var(--text-color);
 }
 
-/*   ## MOBILE(DEFAULT) STYLES (up to 768px wide) */
-/*      Your mobile/default styles go here   */
-
-
-/* LAYOUTS & CONTAINERS */
-
-/* Grid Container */
-.container {
-  display: grid;
-  gap: 1em;
-  margin: 1em;
-}
-
-/* Two-Column Container */
-.two-column {
-  grid-template-columns: 1fr 1fr;
-}
-
-/* Three-Column Container */
-.three-column {
-  grid-template-columns: 1fr 1fr 1fr;
-}
 
 /* DEFAULT LOGO STYLES */
 .sw_logo {
@@ -133,43 +108,58 @@ a:visited {
   border: none !important;
 }
 
+/* BUTTON STYLES */
 
-/* DEFAULT FONTS STYLES */
-
-.header-l {
-  font-size: large;
-}
-.header-m {
-  font-size: medium;
-}
-.header-s {
-  font-size: small;
+a.btn {
+  color: #fff!important;
 }
 
-.subheader-l {
-  font-size: large;
-}
-.subheader-m {
-  font-size: medium;
-}
-.subheader-s {
-  font-size: small;
+a.btn-outline-danger {
+  color: red!important;
 }
 
-.txt-l {
-  font-size: large;
+a.btn-outline-danger:hover {
+  color: white!important;
 }
-.txt-m {
-  font-size: medium;
+
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: var(--btn-padding);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add smooth transition */
 }
-.txt-s {
-  font-size: small;
+
+.btn-primary:hover {
+  background-color: rgba(159, 4, 4);
+  color: var(--secondary-color);
 }
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: var(--btn-padding);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out; /* Add smooth transition */
+}
+
+.btn-secondary:hover {
+  background-color: rgb(234, 233, 233);
+  color: var(--primary-color);
+}
+
 
 
 /* HOVER STYLES */
-
-
 .hover-list li::after {
   content: "";
   width: 0%;
@@ -185,27 +175,8 @@ a:visited {
   width: 100%;
 }
 
-/* UTILS STYLES */
 
-/* Hover Styles */
-
-.hover-list li::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: rgb(255, 254, 254);
-  display: block;
-  transition: 0.5s;
-  margin: auto;
-  position: relative;
-}
-
-.hover-list li:hover::after {
-  width: 100%;
-}
-
-/* Separator */
-
+/* SEPARATOR */
 .vertical_separator {
   border: 1px solid rgba(0, 0, 0, 0.352);
   width: 1px;
@@ -213,7 +184,23 @@ a:visited {
   margin: 0 5px;
 }
 
-/* Breadcrumb styles */
+/* login page separator */
+.or_separator {
+  display: flex;
+  align-items: center;
+}
+.or_separator span {
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  width: 80%;
+  height: 0.5px;
+}
+.or_separator p {
+  margin: 5px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.322);
+}
+
+/* BREADCRUMB STYLES */
 
 .breadcrumbs {
   position: relative;
@@ -239,7 +226,7 @@ a:visited {
 }
 
 
-/* test banner */
+/* TEST BANNER */
 
 #test_banner {
   padding: 10px;
@@ -259,41 +246,404 @@ a:visited {
   margin-right: 7px;
 }
 
-a.btn {
-  color: #fff!important;
+
+
+
+/* SPORT WALES HEADER STYLE */
+
+/* Sport Wales Header */
+
+.sw_header1 {
+  display: flex;
+  background-color: #164b63;
+  font-family: "Montserrat", sans-serif;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-a.btn-outline-danger {
-  color: red!important;
+/* Sport Wales Navigation */
+.sw_nav {
+  display: none;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
 }
 
-a.btn-outline-danger:hover {
-  color: white!important;
+.menu-btn {
+  display: block;
+  position: relative;
+  margin: 0px 10px; 
 }
 
-div.card, div.container {
+.menu-icon {
+  color: white;
+  font-size: 18px;
+}
+
+
+.sw_header1 ul {
+  margin-bottom: 0px;
+}
+
+/* Navigation list */
+
+.sw_nav ul li {
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  margin: 0 10px;
+}
+
+.sw_header1 ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.navbar-collapse  {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 10%;
+}
+
+.navbar-collapse ul li {
   display: block;
 }
-  
 
+.account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin: 5px;
+}
+
+.account i {
+  margin: 4px;
+}
+
+
+/* SPORT WALES FOOTER STYLE */
+.sw_footer1 {
+  padding: 20px 20px;
+  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #164b63;
+  font-family: "Montserrat", sans-serif;
+  grid-template-areas: 
+    "account"
+    "nav"
+    "logo";
+}
+
+/* Footer Logo */
+.sw_footer1 .sw_logo {
+  width: 180px;
+  grid-area: logo;
+  margin: 0px auto;
+}
+
+.sw_footer-nav {
+  position: relative;
+  right: 0px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  grid-area: nav;
+}
+
+.sw_footer-nav ul {
+  margin: 10px;
+}
+
+.sw_footer-nav ul li a {
+  color: rgba(255, 255, 255, 0.539);
+  text-decoration: none;
+  font-size: 8px;
+}
+
+.sw_footer-nav ul .title-list {
+  color: white;
+  font-size: 8px;
+}
+
+/* Acount Button Container */
+.account-btn-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  grid-area: account;
+}
+
+
+/* HEADER & FOOTER MEDIAQ */
+
+/*   ## TABLET STYLES (769px or bigger) */
+@media screen and (min-width: 769px) {
+  /*    Your tablet-specific styles go here */
+
+  .sw_nav {
+    display: flex;
+  }
+  .menu-icon  {
+    display: none;
+  }
+
+  .sw_footer1 {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  .sw_footer1 .sw_logo {
+    margin: 0px 0px;
+  }
+
+}
 
 /*   ## TABLET STYLES (769px to 1024px wide) */
-@media screen and (min-width: var(--tablet-min)) and (max-width: var(--tablet-max)) {
-     /* Your tablet-specific styles go here */
-  /* - {NAME} STYLES */
+@media screen and (min-width: var(--mobile-max)) and (max-width: var(--tablet-max)) {
+  /*    Your tablet-specific styles go here */
+
+  /* SPORT WALES FOOTER 1 STYLE */
+  .sw_footer1 {
+    margin-top: 70px;
+  }
 }
 
 
 /*   ## LAPTOP STYLES (1025px to 1440px wide) */
 @media screen and (min-width: var(--laptop-min)) and (max-width: var(--laptop-max)) {
-     /* Your laptop-specific styles go here */
-  /* - {NAME} STYLES */
+  /*    Your laptop-specific styles go here */
+
+  /* SPORT WALES FOOTER 1 STYLE */
+  .sw_footer1 {
+    margin-top: 100px;
+  }
 }
 
 
 /*   ## DESKTOP STYLES (1441px wide and above) */
-@media screen and (min-width: var(--desktop-min)) {
-     /* Your desktop-specific styles go here */
-  /* - {NAME} STYLES */
+@media screen and (min-width: 1441px) {
+  /*    Your desktop-specific styles go here */
+  .sw_header1 {
+    min-height: 4%;
+  }
+
+  /* SPORT WALES FOOTER 1 STYLE */
+  .sw_footer1 {
+    margin-top: 120px;
+    min-height: 12%;
+  }
+}
+
+
+/* SOCIAL lOGIN STYLES */
+
+/* Social Containers */
+.social-login-container {
+  display: flex;
+  gap: 0.5em;
+}
+
+.social-login-container p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.social-login-long-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.social-login-long-container p {
+  margin-bottom: 10px;
+}
+
+/* login_signin-container */
+.login_signin-container {
+  width: 100%; 
+  padding: 20px; 
+  margin: 10px 0; 
+  background-color: #f5f5f5; 
+}
+
+/* login_signin-form */
+.login_signin-form {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 1em; 
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* Adjust label and input styles */
+.login_signin-form label {
+  margin-bottom: 6px; 
+  font-size: 16px; 
+}
+
+.login_signin-form input[type="text"],
+.login_signin-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #313131;
+  border-radius: 4px; 
+}
+
+.login_signin-form input[type="text"]:hover,
+.login_signin-form input[type="password"]:hover {
+  border: 2px solid #164b63; 
+}
+
+/* Style password input box */
+.password_input {
+  align-items: center;
+}
+
+/* Style the "eye" icon */
+.password_input .fa-eye {
+  position: relative;
+  left: -30px;
+  font-size: 16px;
+  color: rgba(72, 72, 72, 0.904);
+  cursor: pointer;
+  z-index: 2;
+  padding-right: 5px;
+  background-color: white;
+}
+
+.password_input .fa-eye:hover {
+  color: rgba(18, 18, 18, 0.95);
+}
+
+.invalid-user_pass.show,
+.invalid-user_taken.show {
+   display: block !important;
+}
+
+
+/* social buttons */
+
+.social-button {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  border: 1px solid #5d5c5c;
+  border-radius: 2px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.social-button p {
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.486);
+}
+
+.social-button:hover p {
+  color: rgb(0, 0, 0);
+}
+
+.social-button:hover {
+  background-color: #f5f5f5;
+}
+
+  
+
+/* SOCIAL LOGIN MEDIAQ */
+
+/* Tablet Styling */
+@media screen and (min-width: 641px) {
+  /* Adjust .login_signin-container */
+  .login_signin-container {
+    width: 80%; /* Adjust container width for tablets */
+    padding: 30px; /* Increase padding */
+    margin: 20px auto; /* Center the container */
+  }
+
+  /* Adjust .login_signin-form */
+  .login_signin-form {
+    gap: 1.5em; /* Increase row gap for tablets */
+  }
+
+
+}
+
+/* Laptop Styling */
+@media screen and (min-width: 1025px) {
+  /* Adjust .login_signin-container */
+  .login_signin-container {
+    width: 60%; /* Adjust container width for laptops */
+    padding: 40px; /* Increase padding */
+  }
+
+ 
+}
+
+/* Desktop Styling */
+@media screen and (min-width: 1441px) {
+  /* Adjust .login_signin-container */
+  .login_signin-container {
+    width: 50%; /* Adjust container width for desktops */
+    padding: 50px; /* Increase padding */
+  }
+}
+
+
+/* LANGUAGE PICKER   */
+
+.EN, .CY { 
+  display: none;
+}
+
+.EN.show,
+.CY.show {
+  display: block;
+}
+
+.lang-picker {
+  display: flex;
+  padding: 5px 5px;
+  font-size: 10px;
+  background-color: rgb(210, 208, 208);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.lang-picker_en,
+.lang-picker_cy  {
+  display: flex;
+  padding: 5px 5px;
+  font-size: 10px;
+  background-color: rgb(210, 208, 208);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+}
+
+/*  lang-picker span */
+
+.lang-picker_en span,
+.lang-picker_cy span {
+  margin-right: 2px;
+}
+
+.lang-picker_en p,
+.lang-picker_cy p {
+  margin-bottom: 0px;
 }
 

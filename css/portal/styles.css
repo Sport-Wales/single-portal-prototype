@@ -4,7 +4,8 @@
 
 /* - ROOT VARIABLES */
 /* - BACKGROUND IMAGE HEADER */
-/* - CARD STYLES */
+/* - CARD NAV */
+/* - CARD  */
 /* MAP STYLES */
 
 /* ----- Media Queries ----- */
@@ -13,6 +14,7 @@
 /* ## DESKTOP STYLES */
 
 
+ 
 
 
 /* ROOT VARIABLES */
@@ -78,15 +80,140 @@
   margin: 20px 0;
 }
 
-/* CARD STYLES  */
-.card-container a {
+/* CARD NAV  */
+
+.card-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  width: 100%;
+}
+
+.card-nav-container a {
   text-decoration: none;
   color: black;
 }
 
-.card-container a:hover {
+.card-nav-container a:hover {
   color: black;
 }
+
+.card-nav {
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  cursor: pointer;
+  width: 33%;
+  padding-bottom: 28%;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.card-item {
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 0px 10px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.circle-icon {
+  display: flex;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  justify-content: center;
+  text-align: center;
+  background-color: #aa0d1b;
+  border-radius: 50%;
+  width: 66%;
+  padding-top: 66%;
+  position: absolute;
+}
+
+.circle-icon i {
+  position: absolute;
+  top: 50%;
+  color: rgb(252, 252, 252);
+  font-size: 7vw;
+}
+
+.card-nav p {
+  font-weight: bold;
+  font-size: 3vw;
+  position: relative;
+  top: 35%;
+}
+
+.card-nav:hover .circle-icon {
+  background-color: #df1425;
+}
+
+/* Tablet and Larger Styles */
+@media (min-width: 625px) {
+  .card-item {
+    top: 58%;
+  }
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .card-nav {
+    /* background-color: rgb(255, 255, 255); */
+    width: 28%;
+    padding-bottom: 22%;
+  }
+  .card-nav p {
+    font-size: 2.5vw;
+  }
+  .circle-icon {
+    background-color: #aa0d1b;
+    width: 50%;
+    padding-top: 50%;
+  }
+
+
+  .circle-icon i {
+    font-size: 5.5vw;
+  }
+  
+}
+@media screen and (min-width: 1400px) {
+  .card-nav {
+
+    width: 25%;
+    padding-bottom: 20%;
+  }
+  .card-nav p {
+    font-size: 30px;
+  }
+  .circle-icon {
+    background-color: #aa0d1b;
+    width: 50%;
+    padding-top: 50%;
+  }
+
+
+  .circle-icon i {
+    font-size: 60px;
+  }
+  
+}
+
+
+
+
+
+/* CARD  */
 
 .card {
   margin: 20px 0;
@@ -124,7 +251,7 @@
 
 
 @media (min-width: 625px) {
-  .card-container {
+  .card-nav-container {
     padding-top: 50px;
   }
 }

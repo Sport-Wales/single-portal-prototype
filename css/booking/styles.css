@@ -2,7 +2,7 @@
     color: #164B63;
     font-size: 3rem;
 }
-
+ 
 .image-radius {
     border-top-left-radius: 0.8rem!important; /* Adjust the radius as needed */
     border-top-right-radius: 10px;
@@ -23,7 +23,6 @@
     display: none;
 
 }
-  
 
 .meeting-content .tab-pane.show.active {
     display: block;
