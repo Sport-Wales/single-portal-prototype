@@ -159,6 +159,9 @@
 
 /* Tablet and Larger Styles */
 @media (min-width: 625px) {
+  .card-nav {
+    background-color: rgb(255, 255, 255);
+  }
   .card-item {
     top: 58%;
   }
@@ -168,7 +171,7 @@
 
 @media screen and (min-width: 1000px) {
   .card-nav {
-    /* background-color: rgb(255, 255, 255); */
+    background-color: rgb(255, 255, 255);
     width: 28%;
     padding-bottom: 22%;
   }
@@ -208,8 +211,6 @@
   }
   
 }
-
-
 
 
 
@@ -276,7 +277,7 @@
 /*   ## LAPTOP STYLES (1025px or Bigger) */
 @media screen and (min-width: var(--laptop-min)) {
   /*    Your laptop-specific styles go here */
-  /* - {NAME} STYLES */
+
   .map_container {
     padding-top: 60px;
     height: 80%;
